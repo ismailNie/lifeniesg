@@ -34,8 +34,10 @@ header h2 {
 }
  
 header .intro {
-    font-size: 0.75em;
+    font-size: 0.9em;
+    text-align: center;
 }
+
 header .intro a {
     color: #f58220; /* Orange for links */
     text-decoration: none;
