@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const questionContainer = document.getElementById('question-container');
     const resultContainer = document.getElementById('result-container');
- 
+
     // --- DATA STRUCTURES ---
- 
+
     // Define contact information (REPLACE WITH ACTUAL CONTACTS)
     const contactInfo = {
         childHumanDev: "<strong>Contact:</strong> Chair, Child and Human Development Steering Committee [email protected] / ext XXXX",
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         eduTransformSustain: "<strong>Contact:</strong> Chair, Education Transformation and Sustainability Steering Committee [email protected] / ext XXXX",
         speOffice: "<strong>Contact:</strong> Strategic Planning and Engagement Office [email protected] / ext XXXX for general LIFE@NIE SG queries."
     };
- 
+
     // Define result descriptions based on the areas
     const results = {
         childHumanDev: {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // No contact here, leads to another question
         }
     };
- 
+
     // Define the question structure
     const questions = {
         start: {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { text: "Other applications of technology in education.", result: "emergingTech" } // Default Tech alignment
             ]
         },
- 
+
         // --- Fallback Check for Evergreen ---
         q_checkEvergreen: {
              questionText: "It seems your project might not have a primary fit with the Strategic Growth Areas, or needs more context. Does it strongly relate to one of NIE's core, ongoing strengths?",
@@ -133,11 +133,105 @@ document.addEventListener('DOMContentLoaded', () => {
              ]
         }
     };
- 
- 
+
+
     // --- FUNCTIONS ---
- 
+
     function displayQuestion(questionId) {
         const questionData = questions[questionId];
          // Handle intermediate "check Evergreen" state which isn't a final result but triggers next question
-        if (results[questionId] && results[questionId].title === "Checking Evergreen Alignment")
+        if (results[questionId] && results[questionId].title === "Checking Evergreen Alignment") {
+            // Optionally display a brief message before showing the Evergreen check question
+             questionContainer.innerHTML = `<p class="intro">${results[questionId].description}</p>`;
+             // Add a small delay before showing the next question for smoother transition
+             setTimeout(() => {
+                 displayQuestion('q_checkEvergreen'); // Go to the evergreen check question
+             }, 1500); // 1.5 second delay
+             return; // Stop further processing for this ID
+        }
+
+
+        if (!questionData) {
+            console.error("Error: Question ID not found", questionId);
+            displayResult("noStrongAlignment"); // Show generic message if error
+            return;
+        }
+
+        // Clear previous content
+        questionContainer.innerHTML = '';
+        resultContainer.style.display = 'none'; // Hide result area
+
+        // Display the question text
+        const questionTextElem = document.createElement('p');
+        questionTextElem.className = 'question-text';
+        questionTextElem.textContent = questionData.questionText;
+        questionContainer.appendChild(questionTextElem);
+
+        // Display the options
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'options-container';
+        questionData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'option-button';
+            button.textContent = option.text;
+            button.onclick = () => handleOptionClick(option);
+            optionsContainer.appendChild(button);
+        });
+        questionContainer.appendChild(optionsContainer);
+         questionContainer.style.display = 'block'; // Ensure question area is visible
+    }
+
+    function handleOptionClick(option) {
+        if (option.nextQuestionId) {
+            displayQuestion(option.nextQuestionId);
+        } else if (option.result) {
+            // Special check if result is 'checkEvergreen'
+            if(option.result === 'checkEvergreen') {
+                 displayQuestion('checkEvergreen'); // Directly call displayQuestion for this intermediate state
+            } else {
+                displayResult(option.result);
+            }
+        } else {
+            console.error("Error: Option has no destination", option);
+            displayResult("noStrongAlignment");
+        }
+    }
+
+    function displayResult(resultKey) {
+        const resultData = results[resultKey];
+        if (!resultData) {
+             console.error("Error: Result key not found", resultKey);
+             // Display a generic error/contact message
+             resultContainer.innerHTML = `
+                <h3>Error</h3>
+                <p>An unexpected error occurred. Please contact the SPE office for assistance.</p>
+                <div class="contact-info">${contactInfo.speOffice}</div>
+            `;
+         } else {
+              resultContainer.innerHTML = `
+                <h3>Alignment Suggestion</h3>
+                <h4>${resultData.title}</h4>
+                <p>${resultData.description}</p>
+                <div class="contact-info">
+                    <p>For more information or discussion regarding this area, please reach out to:</p>
+                    <p>${resultData.contact || contactInfo.speOffice}</p>
+                     ${resultKey === 'noStrongAlignment' ? '<p>Consider discussing your project with the SPE office to explore potential alignments further.</p>' : ''}
+                </div>
+                <button class="option-button" onclick="startOver()">Start Over</button>
+            `;
+         }
+
+        questionContainer.style.display = 'none'; // Hide questions
+        resultContainer.style.display = 'block'; // Show results
+        resultContainer.scrollIntoView({ behavior: 'smooth' }); // Scroll to show the result
+    }
+
+     // Make startOver globally accessible or attach it to the window object
+     window.startOver = () => {
+         displayQuestion('start');
+     }
+
+
+    // --- INITIALIZATION ---
+    displayQuestion('start'); // Start with the first question
+});
