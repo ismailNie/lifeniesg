@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Define contact information (REPLACE WITH ACTUAL CONTACTS)
     const contactInfo = {
-        childHumanDev: "<strong>Contact:</strong>\nA/P Lim Kam Ming, Head / PCHD (Chair)\nA/P Caroline Koh, PCHD (Co-chair)",
-        scienceOfLearning: "<strong>Contact:</strong>\nProf Kenneth Poon, Dean / Research (Advisor)\nProf David Hung, CD / SoLEC (Co-chair)\nA/P Anne Rifkin​, Dy CD / LSA (Co-chair)",
-        assessmentEvaluation: "<strong>Contact:</strong>\nProf Chang Chew Hung, NIE Sustainability Officer (Chair)\nA/P Chong Wan Har, PCHD (Co-chair)\nDr Tay Hui Yong, Sr Lecturer / LSA (Co-chair)",
-        valuesEthics: "<strong>Contact:</strong>\nProf Low Ee Ling, Dean / AFA (Chair)\nDr Dennis Kwek, CD / CRPP (Co-chair)\nProf Tan Oon Seng, Dean / SPJ and CD / SCCCE (Dir. SCCCE)",
-        emergingTech: "<strong>Contact:</strong>\nA/P Ang Keng Cheng, Dean / GPL​ (Advisor)\nA/P Tan Seng Chee​​​, AD / PLD (Chair)\nA/P Chen Wenli​, Head / LSA (Co-chair)\nA/P Chua Bee Leng, CLIO (Co-chair)",
-        disciplinaryCurriculum: "<strong>Contact:</strong>\nStrategic Planning and Engagement (SPE)",
-        teacherEdDev: "<strong>Contact:</strong>\nStrategic Planning and Engagement (SPE)",
-        eduTransformSustain: "<strong>Contact:</strong>\nStrategic Planning and Engagement (SPE)",
-        speOffice: "<strong>Contact:</strong>\nStrategic Planning and Engagement Department [spenie@nie.edu.sg] for general LIFE@NIE SG ® queries."
+        childHumanDev: "<strong>Contact:</strong><br>A/P Lim Kam Ming, Head / PCHD (Chair)<br>A/P Caroline Koh, PCHD (Co-chair)",
+        scienceOfLearning: "<strong>Contact:</strong><br>Prof Kenneth Poon, Dean / Research (Advisor)<br>Prof David Hung, CD / SoLEC (Co-chair)<br>A/P Anne Rifkin​, Dy CD / LSA (Co-chair)",
+        assessmentEvaluation: "<strong>Contact:</strong><br>Prof Chang Chew Hung, NIE Sustainability Officer (Chair)<br>A/P Chong Wan Har, PCHD (Co-chair)<br>Dr Tay Hui Yong, Sr Lecturer / LSA (Co-chair)",
+        valuesEthics: "<strong>Contact:</strong><br>Prof Low Ee Ling, Dean / AFA (Chair)<br>Dr Dennis Kwek, CD / CRPP (Co-chair)<br>Prof Tan Oon Seng, Dean / SPJ and CD / SCCCE (Dir. SCCCE)",
+        emergingTech: "<strong>Contact:</strong><br>A/P Ang Keng Cheng, Dean / GPL​ (Advisor)<br>A/P Tan Seng Chee​​​, AD / PLD (Chair)<br>A/P Chen Wenli​, Head / LSA (Co-chair)<br>A/P Chua Bee Leng, CLIO (Co-chair)",
+        disciplinaryCurriculum: "<strong>Contact:</strong><br>Strategic Planning and Engagement (SPE)",
+        teacherEdDev: "<strong>Contact:</strong><br>Strategic Planning and Engagement (SPE)",
+        eduTransformSustain: "<strong>Contact:</strong><br>Strategic Planning and Engagement (SPE)",
+        speOffice: "<strong>Contact:</strong><br>Strategic Planning and Engagement Department [spenie@nie.edu.sg] for general LIFE@NIE SG ® queries."
     };
 
     // Define result descriptions based on the areas
