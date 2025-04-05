@@ -272,6 +272,15 @@ document.addEventListener('DOMContentLoaded', () => {
             optionsContainer.appendChild(button);
         });
         questionContainer.appendChild(optionsContainer);
+
+        const startOverButton = document.createElement('button');
+        startOverButton.className = 'option-button';
+        startOverButton.textContent = 'Start Over';
+        startOverButton.onclick = startOver; // Assuming startOver is a function defined elsewhere
+        // Append the "Start Over" button to the optionsContainer
+        optionsContainer.appendChild(startOverButton);
+        questionContainer.appendChild(optionsContainer);
+        
         questionContainer.style.display = 'block'; // Ensure question area is visible
     }
 
