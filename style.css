@@ -34,8 +34,8 @@ header h2 {
 }
  
 header .intro {
-    font-size: 0.9em;
-    text-align: center;
+    font-size: 0.9em !important;
+    text-align: center !important;
 }
 
 header .intro a {
