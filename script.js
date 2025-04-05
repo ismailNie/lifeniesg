@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Define contact information (REPLACE WITH ACTUAL CONTACTS)
     const contactInfo = {
-        childHumanDev: "<strong>Contact:</strong> Chair, Child and Human Development Steering Committee [email protected] / ext XXXX",
-        scienceOfLearning: "<strong>Contact:</strong> Director, SoLEC@NIE [email protected] / ext XXXX",
-        assessmentEvaluation: "<strong>Contact:</strong> Chair, Assessment and Evaluation Steering Committee [email protected] / ext XXXX",
-        valuesEthics: "<strong>Contact:</strong> Chair, Values and Ethics Steering Committee [email protected] / ext XXXX",
-        emergingTech: "<strong>Contact:</strong> Chair, Emerging Technologies Steering Committee [email protected] / ext XXXX",
-        disciplinaryCurriculum: "<strong>Contact:</strong> Please consult your relevant Academic Group Head/Representative.",
-        teacherEdDev: "<strong>Contact:</strong> Assoc Dean, Teacher Education / Assoc Dean, Professional Development [email protected] / ext XXXX",
-        eduTransformSustain: "<strong>Contact:</strong> Chair, Education Transformation and Sustainability Steering Committee [email protected] / ext XXXX",
-        speOffice: "<strong>Contact:</strong> Strategic Planning and Engagement Office [email protected] / ext XXXX for general LIFE@NIE SG queries."
+        childHumanDev: "<strong>Contact:</strong> A/P Lim Kam Ming (Chair), A/P Caroline Koh (Co-chair)",
+        scienceOfLearning: "<strong>Contact:</strong> Prof Kenneth Poon (Advisor), Prof David Hung (Co-chair), A/P Anne Rifkin​ (Co-chair)",
+        assessmentEvaluation: "<strong>Contact:</strong> Prof Chang Chew Hung (Chair), A/P Chong Wan Har (Co-chair), Dr Tay Hui Yong (Co-chair)",
+        valuesEthics: "<strong>Contact:</strong> Prof Low Ee Ling (Chair), Dr Dennis Kwek (Co-chair), Prof Tan Oon Seng (Dir. SCCCE)",
+        emergingTech: "<strong>Contact:</strong> A/P Ang Keng Cheng​ (Advisor), A/P Tan Seng Chee​​​ (Chair), A/P Chen Wenli​ (Co-chair), A/P Chua Bee Leng (Co-chair)",
+        disciplinaryCurriculum: "<strong>Contact:</strong> Strategic Planning and Engagement (SPE)",
+        teacherEdDev: "<strong>Contact:</strong> Strategic Planning and Engagement (SPE)",
+        eduTransformSustain: "<strong>Contact:</strong> Strategic Planning and Engagement (SPE)",
+        speOffice: "<strong>Contact:</strong> Strategic Planning and Engagement Department [spenie@nie.edu.sg] for general LIFE@NIE SG ® queries."
     };
 
     // Define result descriptions based on the areas
@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         scienceOfLearning: {
             title: "Strategic Growth Area: Science of Learning",
-            description: "Focuses on the underlying mechanisms of learning, potentially integrating disciplines like neuroscience, cognitive science, psychology, or AI to enhance precision, personalization, and support successful learning.",
+            description: "Focuses on the underlying mechanisms of learning, potentially integrating disciplines like neuroscience, cognitive science, psychology, or AI to enhance precision, personalisation and support successful learning.",
             contact: contactInfo.scienceOfLearning
         },
         assessmentEvaluation: {
             title: "Strategic Growth Area: Assessment and Evaluation",
-            description: "Involves developing or applying methods to collect and analyze evidence on student learning, program effectiveness, or educational outcomes, contributing to assessment literacy and informed decision-making.",
+            description: "Involves developing or applying methods to collect and analyse evidence on student learning, program effectiveness, or educational outcomes, contributing to assessment literacy and informed decision-making.",
             contact: contactInfo.assessmentEvaluation
         },
         valuesEthics: {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questions = {
         // --- LAYER 1 ---
         start: {
-            questionText: "L1: What is the PRIMARY domain of your project/research?",
+            questionText: "What is the primary domain of your project/research?",
             options: [
                 { text: "Understanding learners: their development, cognition, or behaviour.", nextQuestionId: "q2_learnerFocus" },
                 { text: "Educational methods: teaching strategies, assessment techniques, or interventions.", nextQuestionId: "q2_methodFocus" },
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- LAYER 2 Branches ---
         q2_learnerFocus: {
-            questionText: "L2: Within the 'Understanding Learners' domain, what is the core focus?",
+            questionText: "Within the 'Understanding Learners' domain, what is the core focus?",
             options: [
                 { text: "Developmental trajectories or characteristics of specific learner groups (e.g., early years, adolescents, SEN).", nextQuestionId: "q3_devFocus" },
                 { text: "Fundamental cognitive or neurological processes underlying learning (e.g., memory, attention, brain function).", nextQuestionId: "q3_cogNeuroFocus" },
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         q2_methodFocus: {
-            questionText: "L2: Within the 'Educational Methods' domain, what is the core focus?",
+            questionText: "Within the 'Educational Methods' domain, what is the core focus?",
             options: [
                 { text: "Designing, implementing, or evaluating teaching strategies or pedagogical models.", nextQuestionId: "q3_pedagogyFocus" },
                 { text: "Developing, validating, or applying assessment tools or evaluation frameworks.", nextQuestionId: "q3_assessmentFocus" },
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         q2_techFocus: {
-            questionText: "L2: Within the 'Technology in Education' domain, what is the core focus?",
+            questionText: "Within the 'Technology in Education' domain, what is the core focus?",
             options: [
                 { text: "Developing or engineering new educational technologies or platforms.", nextQuestionId: "q3_techDev" },
                 { text: "Applying or evaluating existing technologies to enhance teaching or learning processes.", nextQuestionId: "q3_techApp" },
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- LAYER 3 Branches ---
         // From q2_learnerFocus
         q3_devFocus: {
-            questionText: "L3: Regarding developmental trajectories/groups, is the main goal:",
+            questionText: "Regarding developmental trajectories/groups, is the main goal:",
             options: [
                 { text: "Understanding fundamental developmental processes or characteristics.", primaryResult: "childHumanDev", nextQuestionId: "q_checkSecondary_fromStrategic" },
                 { text: "Designing or evaluating interventions targeted at specific developmental needs.", primaryResult: "childHumanDev", nextQuestionId: "q_checkSecondary_fromStrategic" },
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
          q3_cogNeuroFocus: {
-            questionText: "L3: Regarding cognitive/neuro processes, is the work primarily:",
+            questionText: "Regarding cognitive/neuro processes, is the work primarily:",
              options: [
                 { text: "Basic science research exploring fundamental learning mechanisms.", primaryResult: "scienceOfLearning", nextQuestionId: "q_checkSecondary_fromStrategic" },
                 { text: "Translating cognitive/neuro principles into applicable educational strategies.", primaryResult: "scienceOfLearning", nextQuestionId: "q_checkSecondary_fromStrategic" },
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
              ]
          },
         q3_socioEmoFocus: {
-             questionText: "L3: Regarding socio-emotional aspects/well-being, is the focus on:",
+             questionText: "Regarding socio-emotional aspects/well-being, is the focus on:",
              options: [
                  { text: "Understanding these factors as part of overall child/human development.", primaryResult: "childHumanDev", nextQuestionId: "q_checkSecondary_fromStrategic" },
                  { text: "Developing character, resilience, or ethical values related to well-being.", primaryResult: "valuesEthics", nextQuestionId: "q_checkSecondary_fromStrategic" },
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
          },
         // From q2_methodFocus
         q3_pedagogyFocus: {
-             questionText: "L3: Regarding teaching strategies/pedagogy, does it heavily involve:",
+             questionText: "Regarding teaching strategies/pedagogy, does it heavily involve:",
              options: [
                  { text: "Leveraging emerging technologies (AI, VR, simulations, analytics).", primaryResult: "emergingTech", nextQuestionId: "q_checkSecondary_fromStrategic" },
                  { text: "Applying principles from the Science of Learning (cognitive science, neuroscience).", primaryResult: "scienceOfLearning", nextQuestionId: "q_checkSecondary_fromStrategic" },
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         q3_assessmentFocus: {
-            questionText: "L3: Regarding assessment/evaluation, is the primary activity:",
+            questionText: "Regarding assessment/evaluation, is the primary activity:",
             options: [
                 { text: "Developing new assessment instruments or frameworks.", primaryResult: "assessmentEvaluation", nextQuestionId: "q_checkSecondary_fromStrategic" },
                 { text: "Conducting large-scale program evaluations or system-level assessments.", primaryResult: "assessmentEvaluation", nextQuestionId: "q_checkSecondary_fromStrategic" },
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         // From q2_techFocus
         q3_techDev: {
-            questionText: "L3: When developing new EdTech, is the core innovation related to:",
+            questionText: "When developing new EdTech, is the core innovation related to:",
              options: [
                  { text: "Artificial Intelligence applications (e.g., personalization, feedback).", primaryResult: "emergingTech", nextQuestionId: "q_checkSecondary_fromStrategic" },
                  { text: "Immersive technologies (VR/AR), simulations, or visualizations.", primaryResult: "emergingTech", nextQuestionId: "q_checkSecondary_fromStrategic" },
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
              ]
         },
         q3_techApp: {
-            questionText: "L3: When applying/evaluating existing EdTech, is the main purpose to:",
+            questionText: "When applying/evaluating existing EdTech, is the main purpose to:",
             options: [
                  { text: "Improve teaching or learning effectiveness in a specific context.", primaryResult: "emergingTech", nextQuestionId: "q_checkSecondary_fromStrategic" },
                  { text: "Enhance assessment methods or provide better learning feedback.", primaryResult: "emergingTech", nextQuestionId: "q_checkSecondary_ET_assessment" }, // Flag assessment link
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- LAYER 4: Check Secondary Alignments ---
         // Generic checker after identifying a Strategic Growth Area primary
         q_checkSecondary_fromStrategic: {
-            questionText: "L4: Your project shows primary alignment with a Strategic Growth Area. Does it ALSO strongly contribute to one of NIE's Evergreen Strengths?",
+            questionText: "Your project shows primary alignment with a Strategic Growth Area. Does it also strongly contribute to one of NIE's Evergreen Strengths?",
             options: [
                 { text: "Yes, significantly enhances core Teacher Education or Professional Development.", secondaryResult: "teacherEdDev" },
                 { text: "Yes, substantially deepens Disciplinary Knowledge or refines Curriculum.", secondaryResult: "disciplinaryCurriculum" },
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         // Generic checker after identifying an Evergreen Strength primary
          q_checkSecondary_fromEvergreen: {
-            questionText: "L4: Your project aligns primarily with an Evergreen Strength. Does it ALSO significantly leverage or contribute to a Strategic Growth Area?",
+            questionText: "Your project aligns primarily with an Evergreen Strength. Does it ALSO significantly leverage or contribute to a Strategic Growth Area?",
              options: [
                 { text: "Yes, incorporates insights/methods from Science of Learning.", secondaryResult: "scienceOfLearning" },
                 { text: "Yes, involves development/understanding related to Child/Human Development.", secondaryResult: "childHumanDev" },
@@ -202,21 +202,21 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         // Specific secondary checks based on L3 paths (Examples)
          q_checkSecondary_AE_tech: { // From Assessment path that flagged tech
-             questionText: "L4: Primary alignment is Assessment & Evaluation. Given the technology focus, does it also strongly align with Emerging Technologies?",
+             questionText: "Primary alignment is Assessment & Evaluation. Given the technology focus, does it also strongly align with Emerging Technologies?",
             options: [
                  { text: "Yes, the technology aspect is a major component.", secondaryResult: "emergingTech" },
                  { text: "No, technology is secondary to the assessment goals.", nextQuestionId: "q_checkSecondary_fromStrategic" } // Go to generic Evergreen check
              ]
          },
          q_checkSecondary_ET_analytics: { // From Tech Dev path that flagged analytics
-            questionText: "L4: Primary alignment is Emerging Technologies (Analytics). Does it also strongly contribute to Assessment & Evaluation practices?",
+            questionText: "Primary alignment is Emerging Technologies (Analytics). Does it also strongly contribute to Assessment & Evaluation practices?",
              options: [
                  { text: "Yes, improving assessment/evaluation is a key outcome.", secondaryResult: "assessmentEvaluation" },
                  { text: "No, the focus is mainly on the technology/data itself.", nextQuestionId: "q_checkSecondary_fromStrategic" } // Go to generic Evergreen check
              ]
          },
          q_checkSecondary_ET_assessment: { // From Tech App path that flagged assessment
-             questionText: "L4: Primary alignment is Emerging Technologies (for Assessment). Does it also strongly contribute to Assessment & Evaluation knowledge/practice?",
+             questionText: "Primary alignment is Emerging Technologies (for Assessment). Does it also strongly contribute to Assessment & Evaluation knowledge/practice?",
             options: [
                 { text: "Yes, advancing assessment/evaluation is a key outcome.", secondaryResult: "assessmentEvaluation" },
                 { text: "No, the focus is mainly on the application of the technology.", nextQuestionId: "q_checkSecondary_fromStrategic" } // Go to generic Evergreen check
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         q_checkSecondary_ET_SoL: { // From Tech App path that flagged SoL
-            questionText: "L4: Primary alignment is Emerging Technologies (based on SoL). Does the project also significantly contribute to the Science of Learning research itself?",
+            questionText: "Primary alignment is Emerging Technologies (based on SoL). Does the project also significantly contribute to the Science of Learning research itself?",
             options: [
                  { text: "Yes, it generates new insights into learning mechanisms.", secondaryResult: "scienceOfLearning" },
                  { text: "No, it primarily applies known SoL principles via technology.", nextQuestionId: "q_checkSecondary_fromStrategic" } // Go to generic Evergreen check
