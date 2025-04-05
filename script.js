@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Define contact information (REPLACE WITH ACTUAL CONTACTS)
     const contactInfo = {
-        childHumanDev: "<strong>Contact:</strong> A/P Lim Kam Ming (Chair), A/P Caroline Koh (Co-chair)",
-        scienceOfLearning: "<strong>Contact:</strong> Prof Kenneth Poon (Advisor), Prof David Hung (Co-chair), A/P Anne Rifkin​ (Co-chair)",
-        assessmentEvaluation: "<strong>Contact:</strong> Prof Chang Chew Hung (Chair), A/P Chong Wan Har (Co-chair), Dr Tay Hui Yong (Co-chair)",
-        valuesEthics: "<strong>Contact:</strong> Prof Low Ee Ling (Chair), Dr Dennis Kwek (Co-chair), Prof Tan Oon Seng (Dir. SCCCE)",
-        emergingTech: "<strong>Contact:</strong> A/P Ang Keng Cheng​ (Advisor), A/P Tan Seng Chee​​​ (Chair), A/P Chen Wenli​ (Co-chair), A/P Chua Bee Leng (Co-chair)",
-        disciplinaryCurriculum: "<strong>Contact:</strong> Strategic Planning and Engagement (SPE)",
-        teacherEdDev: "<strong>Contact:</strong> Strategic Planning and Engagement (SPE)",
-        eduTransformSustain: "<strong>Contact:</strong> Strategic Planning and Engagement (SPE)",
-        speOffice: "<strong>Contact:</strong> Strategic Planning and Engagement Department [spenie@nie.edu.sg] for general LIFE@NIE SG ® queries."
+        childHumanDev: "<strong>Contact:</strong>\nA/P Lim Kam Ming, Head / PCHD (Chair)\nA/P Caroline Koh, PCHD (Co-chair)",
+        scienceOfLearning: "<strong>Contact:</strong>\nProf Kenneth Poon, Dean / Research (Advisor)\nProf David Hung, CD / SoLEC (Co-chair)\nA/P Anne Rifkin​, Dy CD / LSA (Co-chair)",
+        assessmentEvaluation: "<strong>Contact:</strong>\nProf Chang Chew Hung, NIE Sustainability Officer (Chair)\nA/P Chong Wan Har, PCHD (Co-chair)\nDr Tay Hui Yong, Sr Lecturer / LSA (Co-chair)",
+        valuesEthics: "<strong>Contact:</strong>\nProf Low Ee Ling, Dean / AFA (Chair)\nDr Dennis Kwek, CD / CRPP (Co-chair)\nProf Tan Oon Seng, Dean / SPJ and CD / SCCCE (Dir. SCCCE)",
+        emergingTech: "<strong>Contact:</strong>\nA/P Ang Keng Cheng, Dean / GPL​ (Advisor)\nA/P Tan Seng Chee​​​, AD / PLD (Chair)\nA/P Chen Wenli​, Head / LSA (Co-chair)\nA/P Chua Bee Leng, CLIO (Co-chair)",
+        disciplinaryCurriculum: "<strong>Contact:</strong>\nStrategic Planning and Engagement (SPE)",
+        teacherEdDev: "<strong>Contact:</strong>\nStrategic Planning and Engagement (SPE)",
+        eduTransformSustain: "<strong>Contact:</strong>\nStrategic Planning and Engagement (SPE)",
+        speOffice: "<strong>Contact:</strong>\nStrategic Planning and Engagement Department [spenie@nie.edu.sg] for general LIFE@NIE SG ® queries."
     };
 
     // Define result descriptions based on the areas
