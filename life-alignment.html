@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFE@NIE SG - Project Alignment Self-Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff; /* White content background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            background-color: #003d7d; /* NIE Dark Blue */
+            color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+
+        .intro, .question-section, #results {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fdfdfd;
+        }
+
+        .question-section h3 {
+            margin-top: 0;
+            color: #003d7d; /* NIE Dark Blue */
+        }
+
+        .question-section label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .question-section label:hover {
+             background-color: #eef5ff; /* Light blue hover */
+        }
+
+
+        .question-section input[type="radio"],
+        .question-section input[type="checkbox"] {
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Hide sections initially */
+        .question-section, #results {
+            display: none;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #0073e6; /* NIE Lighter Blue */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #005bb5; /* Darker blue on hover */
+        }
+
+        button.reset-button {
+            background-color: #6c757d; /* Grey */
+            margin-left: 10px;
+        }
+        button.reset-button:hover {
+             background-color: #5a6268; /* Darker grey */
+        }
+
+        #results h2 {
+             color: #003d7d; /* NIE Dark Blue */
+        }
+
+        #results p {
+            margin-bottom: 10px;
+        }
+
+        #results strong {
+            color: #003d7d; /* NIE Dark Blue */
+        }
+
+        #results .contact-info {
+            background-color: #eef5ff; /* Light blue background for contact */
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            border-left: 4px solid #0073e6; /* Blue accent border */
+        }
+        #results .contact-info a {
+            color: #005bb5;
+            text-decoration: none;
+        }
+         #results .contact-info a:hover {
+            text-decoration: underline;
+         }
+
+         .footnote {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+         }
+         .footnote a {
+            color: #005bb5;
+         }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>LIFE@NIE SG Alignment Self-Assessment</h1>
+        <p>Evaluate how your project or research aligns with NIE's strategic priorities.</p>
+    </header>
+
+    <div class="intro">
+        <h2>Welcome, NIE Faculty!</h2>
+        <p>
+            This self-assessment tool helps you understand how your planned project or research aligns with the
+            LIFE@NIE SG strategic framework, encompassing both Strategic Growth Areas and NIE's Evergreen Strengths & Distinctive Capabilities.
+        </p>
+        <p>
+            Please answer the following questions based on the primary focus and intended contribution of your work.
+            This will provide an initial indication of alignment and direct you to the relevant contact(s) for further discussion.
+        </p>
+        <button onclick="startAssessment()">Begin Assessment</button>
+    </div>
+
+    <div id="q1" class="question-section">
+        <h3>Layer 1: Primary Focus Area</h3>
+        <p>Does the primary aim of your project/research relate more towards advancing knowledge/practice in <strong>new or evolving areas</strong> (Strategic Growth Areas) or strengthening <strong>core educational domains and capabilities</strong> (Evergreen Strengths)?</p>
+        <label><input type="radio" name="focus_type" value="strategic"> Primarily targets Strategic Growth Areas (e.g., emerging tech, specific developmental science, new learning science insights, assessment innovation, values focus).</label>
+        <label><input type="radio" name="focus_type" value="evergreen"> Primarily targets Evergreen Strengths (e.g., disciplinary knowledge, curriculum design, teacher education models, professional development, sustainability in education).</label>
+        <label><input type="radio" name="focus_type" value="both"> Significantly integrates elements of both Strategic Growth and Evergreen Strengths.</label>
+        <label><input type="radio" name="focus_type" value="unsure"> Unsure about the primary focus.</label>
+        <button onclick="processQ1()">Next</button>
+    </div>
+
+    <div id="q2_strategic" class="question-section">
+        <h3>Layer 2: Strategic Growth Area Alignment</h3>
+        <p>Which <strong>Strategic Growth Area</strong> best describes the <i>core focus</i> of your project/research?</p>
+        <label><input type="radio" name="strategic_area" value="Child and Human Development"> Child and Human Development</label>
+        <label><input type="radio" name="strategic_area" value="Science of Learning"> Science of Learning</label>
+        <label><input type="radio" name="strategic_area" value="Assessment and Evaluation"> Assessment and Evaluation</label>
+        <label><input type="radio" name="strategic_area" value="Values and Ethics"> Values and Ethics</label>
+        <label><input type="radio" name="strategic_area" value="Emerging Technologies"> Emerging Technologies</label>
+        <button onclick="processQ2('strategic')">Next</button>
+    </div>
+
+    <div id="q2_evergreen" class="question-section">
+        <h3>Layer 2: Evergreen Strength Alignment</h3>
+        <p>Which <strong>Evergreen Strength & Distinctive Capability</strong> best describes the <i>core focus</i> of your project/research?</p>
+        <label><input type="radio" name="evergreen_area" value="Disciplinary Knowledge and Curriculum"> Disciplinary Knowledge and Curriculum</label>
+        <label><input type="radio" name="evergreen_area" value="Teacher Education and Professional Development"> Teacher Education and Professional Development</label>
+        <label><input type="radio" name="evergreen_area" value="Education, Transformation and Sustainability"> Education, Transformation and Sustainability</label>
+        <button onclick="processQ2('evergreen')">Next</button>
+    </div>
+
+     <div id="q2_clarify" class="question-section">
+        <h3>Layer 2: Clarifying Focus</h3>
+        <p>To help clarify, please indicate which set of areas feels like a stronger match for your project's <i>primary</i> contribution:</p>
+         <label><input type="radio" name="clarify_focus" value="strategic"> Focus leans more towards Strategic Growth Areas (Child Development, Learning Science, Assessment, Values/Ethics, Emerging Tech).</label>
+        <label><input type="radio" name="clarify_focus" value="evergreen"> Focus leans more towards Evergreen Strengths (Disciplinary/Curriculum, Teacher Ed/PD, Ed Transformation/Sustainability).</label>
+        <button onclick="processQ2Clarify()">Next</button>
+    </div>
+
+
+    <div id="q3" class="question-section">
+        <h3>Layer 3: Secondary Alignments</h3>
+        <p>Beyond the primary area identified, does your project/research have significant connections or contributions to any <strong>other</strong> LIFE@NIE SG areas? (Select all that apply)</p>
+        <strong>Strategic Growth Areas:</strong><br>
+        <label><input type="checkbox" name="secondary_alignment" value="Child and Human Development"> Child and Human Development</label>
+        <label><input type="checkbox" name="secondary_alignment" value="Science of Learning"> Science of Learning</label>
+        <label><input type="checkbox" name="secondary_alignment" value="Assessment and Evaluation"> Assessment and Evaluation</label>
+        <label><input type="checkbox" name="secondary_alignment" value="Values and Ethics"> Values and Ethics</label>
+        <label><input type="checkbox" name="secondary_alignment" value="Emerging Technologies"> Emerging Technologies</label>
+        <br><strong>Evergreen Strengths & Distinctive Capabilities:</strong><br>
+        <label><input type="checkbox" name="secondary_alignment" value="Disciplinary Knowledge and Curriculum"> Disciplinary Knowledge and Curriculum</label>
+        <label><input type="checkbox" name="secondary_alignment" value="Teacher Education and Professional Development"> Teacher Education and Professional Development</label>
+        <label><input type="checkbox" name="secondary_alignment" value="Education, Transformation and Sustainability"> Education, Transformation and Sustainability</label>
+        <br>
+        <label><input type="checkbox" name="secondary_alignment" value="None"> No significant secondary alignments</label>
+        <button onclick="processQ3()">Next</button>
+    </div>
+
+    <div id="q4" class="question-section">
+        <h3>Layer 4: Intended Impact</h3>
+        <p>How does your project primarily aim to contribute to NIE's broader goals? (Select the most relevant)</p>
+        <label><input type="radio" name="impact" value="research"> Primarily advances education research and generates new knowledge.</label>
+        <label><input type="radio" name="impact" value="teaching"> Primarily improves teaching, learning, curriculum, or professional development practices.</label>
+        <label><input type="radio" name="impact" value="outreach"> Primarily builds international reputation, partnerships, or outreach.</label>
+        <label><input type="radio" name="impact" value="capacity"> Primarily focuses on strategic hiring or building internal capacity/expertise.</label>
+        <label><input type="radio" name="impact" value="multiple"> Significantly contributes to multiple areas above.</label>
+        <button onclick="showResults()">Show Alignment Assessment</button>
+    </div>
+
+
+    <div id="results">
+        <h2>Alignment Assessment</h2>
+        <p id="primary-alignment"></p>
+        <p id="secondary-alignment"></p>
+        <p id="impact-statement"></p>
+        <div id="contact-info" class="contact-info">
+            </div>
+        <p>
+            This assessment provides a preliminary indication of alignment. We encourage you to reach out to the relevant contact(s) above to discuss your project further and explore potential collaborations or support within the LIFE@NIE SG framework.
+        </p>
+        <button onclick="resetAssessment()" class="reset-button">Start Over</button>
+    </div>
+
+    <div class="footnote">
+        Learn more about <a href="https://www.ntu.edu.sg/nie/about-us/life@nie-sg" target="_blank" rel="noopener noreferrer">LIFE@NIE SG</a> on the NIE website.
+        For questions about this tool, please contact the Strategic Planning and Engagement (SPE) department.
+    </div>
+
+</div>
+
+<script>
+    let alignmentData = {
+        focusType: null,
+        primaryArea: null,
+        secondaryAreas: [],
+        impact: null
+    };
+
+    // --- Contact Information ---
+    // !!! IMPORTANT: Replace placeholders below with actual contact emails/details !!!
+    const contactDetails = {
+        // Strategic Growth Areas
+        "Child and Human Development": { name: "Child and Human Development Steering Committee", email: "chd_contact@nie.edu.sg" }, // Placeholder
+        "Science of Learning": { name: "Science of Learning Steering Committee", email: "sol_contact@nie.edu.sg" }, // Placeholder
+        "Assessment and Evaluation": { name: "Assessment and Evaluation Steering Committee", email: "ae_contact@nie.edu.sg" }, // Placeholder
+        "Values and Ethics": { name: "Values and Ethics Steering Committee", email: "ve_contact@nie.edu.sg" }, // Placeholder
+        "Emerging Technologies": { name: "Emerging Technologies Steering Committee", email: "et_contact@nie.edu.sg" }, // Placeholder
+        // Evergreen Strengths
+        "Disciplinary Knowledge and Curriculum": { name: "Disciplinary Knowledge and Curriculum Point of Contact", email: "dkc_contact@nie.edu.sg" }, // Placeholder
+        "Teacher Education and Professional Development": { name: "Teacher Education and PD Point of Contact", email: "tepd_contact@nie.edu.sg" }, // Placeholder
+        "Education, Transformation and Sustainability": { name: "Education, Transformation and Sustainability Point of Contact", email: "ets_contact@nie.edu.sg" }, // Placeholder
+        // Default/Unsure
+        "General Inquiry": { name: "Strategic Planning and Engagement (SPE)", email: "spe_contact@nie.edu.sg"} // Placeholder for SPE contact
+    };
+    // --------------------------
+
+    function hideAllSections() {
+        document.querySelectorAll('.question-section').forEach(section => section.style.display = 'none');
+        document.getElementById('results').style.display = 'none';
+        document.querySelector('.intro').style.display = 'none';
+    }
+
+    function startAssessment() {
+        hideAllSections();
+        document.getElementById('q1').style.display = 'block';
+    }
+
+    function processQ1() {
+        const selectedFocus = document.querySelector('input[name="focus_type"]:checked');
+        if (!selectedFocus) {
+            alert("Please select an option.");
+            return;
+        }
+        alignmentData.focusType = selectedFocus.value;
+        hideAllSections();
+        if (alignmentData.focusType === 'strategic') {
+            document.getElementById('q2_strategic').style.display = 'block';
+        } else if (alignmentData.focusType === 'evergreen') {
+            document.getElementById('q2_evergreen').style.display = 'block';
+        } else { // both or unsure
+            document.getElementById('q2_clarify').style.display = 'block';
+        }
+    }
+
+     function processQ2Clarify() {
+        const selectedClarification = document.querySelector('input[name="clarify_focus"]:checked');
+         if (!selectedClarification) {
+            alert("Please select an option to clarify the focus.");
+            return;
+        }
+         hideAllSections();
+         // Treat the clarified focus as the primary path forward
+         if (selectedClarification.value === 'strategic') {
+             alignmentData.focusType = 'strategic'; // Update focus type
+             document.getElementById('q2_strategic').style.display = 'block';
+         } else { // evergreen
+             alignmentData.focusType = 'evergreen'; // Update focus type
+             document.getElementById('q2_evergreen').style.display = 'block';
+         }
+     }
+
+
+    function processQ2(type) { // type is 'strategic' or 'evergreen'
+        const areaSelector = `input[name="${type}_area"]:checked`;
+        const selectedArea = document.querySelector(areaSelector);
+        if (!selectedArea) {
+            alert("Please select a specific area.");
+            return;
+        }
+        alignmentData.primaryArea = selectedArea.value;
+        hideAllSections();
+        document.getElementById('q3').style.display = 'block';
+
+        // Pre-uncheck the primary area in the secondary list if it exists
+         const secondaryCheckboxes = document.querySelectorAll('input[name="secondary_alignment"]');
+         secondaryCheckboxes.forEach(checkbox => {
+            if (checkbox.value === alignmentData.primaryArea) {
+                checkbox.disabled = true; // Disable checking the primary area as secondary
+                checkbox.checked = false; // Ensure it's unchecked
+                checkbox.parentElement.style.opacity = 0.5; // Visually indicate it's disabled
+            } else {
+                 checkbox.disabled = false;
+                 checkbox.parentElement.style.opacity = 1;
+            }
+        });
+    }
+
+    function processQ3() {
+        alignmentData.secondaryAreas = [];
+        const selectedSecondary = document.querySelectorAll('input[name="secondary_alignment"]:checked');
+        let noneSelected = false;
+         selectedSecondary.forEach(checkbox => {
+            if (checkbox.value === 'None') {
+                 noneSelected = true;
+             } else if (!checkbox.disabled) { // Only add if not disabled (i.e., not the primary)
+                 alignmentData.secondaryAreas.push(checkbox.value);
+            }
+        });
+
+         // If "None" is checked, clear other selections
+        if (noneSelected) {
+             alignmentData.secondaryAreas = [];
+         }
+
+        // Basic validation: if 'None' is checked, nothing else should be.
+        // (Could add JS to enforce this visually too)
+         if (noneSelected && selectedSecondary.length > 1) {
+            alert("If you select 'No significant secondary alignments', please uncheck other areas.");
+             return;
+         }
+
+        hideAllSections();
+        document.getElementById('q4').style.display = 'block';
+    }
+
+    function showResults() {
+        const selectedImpact = document.querySelector('input[name="impact"]:checked');
+        if (!selectedImpact) {
+            alert("Please select the intended impact.");
+            return;
+        }
+        alignmentData.impact = selectedImpact.value;
+
+        hideAllSections();
+        document.getElementById('results').style.display = 'block';
+
+        // --- Generate Result Text ---
+        let primaryText = "";
+        let contactArea = "General Inquiry"; // Default contact
+
+        if (alignmentData.primaryArea) {
+            primaryText = `Based on your selections, your project shows a <strong>primary alignment</strong> with the LIFE@NIE SG area: <strong>${alignmentData.primaryArea}</strong>.`;
+            contactArea = alignmentData.primaryArea; // Use primary area for contact
+        } else if (alignmentData.focusType === 'unsure') {
+            primaryText = "It seems there's some uncertainty about the primary alignment. We recommend discussing your project further with the relevant teams.";
+             // Keep contactArea as General Inquiry (SPE)
+        } else {
+             primaryText = "Your project's alignment appears broad or requires further clarification. Please review the LIFE@NIE SG areas and consider reaching out for discussion.";
+             // Keep contactArea as General Inquiry (SPE)
+        }
+        document.getElementById('primary-alignment').innerHTML = primaryText;
+
+
+        let secondaryText = "";
+        if (alignmentData.secondaryAreas.length > 0) {
+            secondaryText = `It also shows potential <strong>secondary alignment(s)</strong> with: <strong>${alignmentData.secondaryAreas.join(', ')}</strong>.`;
+        } else {
+            secondaryText = "No significant secondary alignments were indicated.";
+        }
+         document.getElementById('secondary-alignment').innerHTML = secondaryText;
+
+
+        let impactTextMap = {
+            research: "The project's focus on advancing research and knowledge aligns well with NIE's goals.",
+            teaching: "Its aim to improve teaching, learning, or professional development directly supports NIE's core mission.",
+            outreach: "The focus on international reputation and outreach contributes to NIE's global standing.",
+            capacity: "Building internal capacity is crucial for NIE's strategic growth.",
+            multiple: "Contributing across multiple impact areas demonstrates broad potential value."
+        };
+         document.getElementById('impact-statement').innerHTML = impactTextMap[alignmentData.impact] || "";
+
+
+        // --- Display Contact Info ---
+        const contact = contactDetails[contactArea] || contactDetails["General Inquiry"];
+        const contactDiv = document.getElementById('contact-info');
+        contactDiv.innerHTML = `
+            <strong>Recommended Contact:</strong> ${contact.name}<br>
+            <strong>Email:</strong> <a href="mailto:${contact.email}">${contact.email}</a>
+            ${generateSecondaryContacts()}
+        `;
+    }
+
+     function generateSecondaryContacts() {
+         let secondaryContactsHTML = "";
+         if (alignmentData.secondaryAreas.length > 0) {
+             secondaryContactsHTML += "<br><br>For secondary alignment areas, you may also consider contacting:";
+             alignmentData.secondaryAreas.forEach(area => {
+                const contact = contactDetails[area];
+                 if(contact) {
+                    secondaryContactsHTML += `<br>- ${contact.name}: <a href="mailto:${contact.email}">${contact.email}</a>`;
+                 }
+             });
+         }
+         return secondaryContactsHTML;
+     }
+
+    function resetAssessment() {
+        // Reset data
+        alignmentData = {
+            focusType: null,
+            primaryArea: null,
+            secondaryAreas: [],
+            impact: null
+        };
+        // Reset form elements
+        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+            input.checked = false;
+             input.disabled = false; // Re-enable all checkboxes
+             input.parentElement.style.opacity = 1; // Reset opacity
+        });
+        // Hide sections and show intro
+        hideAllSections();
+        document.querySelector('.intro').style.display = 'block';
+    }
+
+    // Initialize - Hide JS-controlled sections on load
+    document.addEventListener('DOMContentLoaded', () => {
+        hideAllSections();
+        document.querySelector('.intro').style.display = 'block'; // Show intro first
+    });
+
+</script>
+
+</body>
+</html>
