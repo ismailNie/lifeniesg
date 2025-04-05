@@ -276,8 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(resetter==1){
             const startOverButton = document.createElement('button');
-            startOverButton.className = 'option-button';
-            startOverButton.textContent = '&#x1F504; Start Over';
+            startOverButton.classList.add('option-button', 'resetButton');
+            // startOverButton.className = 'option-button';
+            startOverButton.textContent = 'Start Over';
             startOverButton.onclick = startOver; // Assuming startOver is a function defined elsewhere
             // Append the "Start Over" button to the optionsContainer
             optionsContainer.appendChild(startOverButton);
@@ -333,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>Error</h3>
                 <p>An unexpected error occurred determining primary alignment. Please contact the SPE office.</p>
                 <div class="contact-info">${contactInfo.speOffice}</div>
-                <button class="option-button" onclick="startOver()">&#x1F504; Start Over</button>
+                <button class="option-button resetButton" onclick="startOver()">Start Over</button>
             `;
          } else {
               let secondaryHtml = '';
@@ -363,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
                      ${primaryKey === 'noStrongAlignment' ? '<p>Consider discussing your project with the SPE office to explore potential alignments further.</p>' : ''}
                 </div>
                 ${secondaryHtml}
-                <button class="option-button" onclick="startOver()">&#x1F504; Start Over</button>
+                <button class="option-button resetButton" onclick="startOver()">Start Over</button>
             `;
          }
 
