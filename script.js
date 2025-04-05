@@ -283,12 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
             optionsContainer.appendChild(startOverButton);
             questionContainer.appendChild(optionsContainer);
         }
-        resetter = 1;
         
         questionContainer.style.display = 'block'; // Ensure question area is visible
     }
 
     function handleOptionClick(option) {
+        
+        resetter = 1; // enable restart
+        
          // Reset secondary if we are moving to a new primary question path implicitly
          // This happens if an option only has 'nextQuestionId' without setting a primary/secondary result yet.
         // Note: This reset might need refinement depending on desired flow complexity.
@@ -319,6 +321,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayResult(primaryKey, secondaryKey) {
+
+        resetter = 0; // reset restart
+        
         const primaryResultData = results[primaryKey];
         const secondaryResultData = secondaryKey ? results[secondaryKey] : null;
 
