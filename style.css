@@ -34,8 +34,7 @@ header h2 {
 }
  
 header .intro {
-    font-size: 1em;
-    max-width: 800px;
+    font-size: 0.75em;
 }
 header .intro a {
     color: #f58220; /* Orange for links */
@@ -45,7 +44,10 @@ header .intro a:hover {
     text-decoration: underline;
 }
  
- 
+.logo-placeholder img {
+    width: 250px; height: auto;
+}
+
 /* Main Content Area */
 main {
     max-width: 900px;
