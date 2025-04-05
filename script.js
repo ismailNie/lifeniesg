@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => { 
     const questionContainer = document.getElementById('question-container');
     const resultContainer = document.getElementById('result-container');
+    var resetter = 0;
     let primaryAlignmentKey = null; // To store the primary alignment while checking for secondary
 
     // --- DATA STRUCTURES ---
@@ -273,13 +274,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         questionContainer.appendChild(optionsContainer);
 
-        const startOverButton = document.createElement('button');
-        startOverButton.className = 'option-button';
-        startOverButton.textContent = 'Start Over';
-        startOverButton.onclick = startOver; // Assuming startOver is a function defined elsewhere
-        // Append the "Start Over" button to the optionsContainer
-        optionsContainer.appendChild(startOverButton);
-        questionContainer.appendChild(optionsContainer);
+        if(resetter==1){
+            const startOverButton = document.createElement('button');
+            startOverButton.className = 'option-button';
+            startOverButton.textContent = 'Start Over';
+            startOverButton.onclick = startOver; // Assuming startOver is a function defined elsewhere
+            // Append the "Start Over" button to the optionsContainer
+            optionsContainer.appendChild(startOverButton);
+            questionContainer.appendChild(optionsContainer);
+        }
+        resetter = 1;
         
         questionContainer.style.display = 'block'; // Ensure question area is visible
     }
@@ -366,6 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
      // Make startOver globally accessible
      window.startOver = () => {
+         resetter = 0;
          primaryAlignmentKey = null; // Reset stored primary key
          displayQuestion('start');
      }
