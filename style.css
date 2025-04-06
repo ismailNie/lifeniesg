@@ -91,7 +91,11 @@ main {
     transition: background-color 0.3s ease, transform 0.1s ease;
     box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
- 
+
+.resetButton {
+    font-style: italic;
+}
+
 .option-button:hover {
     background-color: #d4e6f1; /* Slightly darker blue on hover */
     transform: translateY(-2px);
