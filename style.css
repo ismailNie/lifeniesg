@@ -93,7 +93,7 @@ main {
 }
 
 .resetButton {
-    font-style: italic;
+    font-style: italic !important;
 }
 
 .option-button:hover {
